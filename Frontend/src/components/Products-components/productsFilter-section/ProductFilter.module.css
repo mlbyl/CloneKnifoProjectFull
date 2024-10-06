@@ -1,0 +1,38 @@
+.mainDiv{
+  font-family: 'Poppins';
+}
+.filterList {
+  list-style: none;
+  padding:2rem 0 3rem 0;
+  margin: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.filterItem {
+  margin-bottom: 15px;
+}
+
+.filterRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Poppins';
+}
+.filterRow:hover label{
+color:#cc1a32
+}
+
+.filterRow input {
+  margin-right: 10px;
+  width: 1.5rem;
+  height:1.5rem;
+}
+
+.filterRow label {
+  flex-grow: 1;
+}
+
+.productCount {
+  color: gray;
+  font-weight: 600;
+}

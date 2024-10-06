@@ -1,0 +1,90 @@
+.container {
+  font-family: "Poppins";
+  width: 90%;
+  margin: 8rem auto;
+  background-color: #f7f7f7;
+  border-radius: 0.5rem;
+  /* padding: 1rem; */
+  display: grid;
+  grid-template-rows: auto;
+}
+
+.header,
+.row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  text-align: center;
+}
+
+.header {
+  font-weight: 600;
+  border-bottom: 1px solid #ddd;
+}
+
+.row {
+  border-bottom: 1px solid #ddd;
+}
+
+.header > div {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.row > div:not(:first-child) {
+  padding: 4rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header > div:not(:last-child),
+.row > div:not(:last-child) {
+  border-right: 1px solid #ddd;
+}
+
+.itemDetails {
+  display: flex;
+  align-items: center; /* Dikeyde ortalama */
+  justify-content: flex-start; /* Yatayda sola hizalama */
+  padding-left: 1rem;
+  gap: 1rem; /* Ürün detayları arasında boşluk */
+}
+
+.itemImage {
+  width: 80px;
+  height: auto;
+  border-radius: 0.25rem;
+  border: 1px solid #ccc;
+}
+
+.price,
+.quantity,
+.totalPrice {
+  font-size: 1rem;
+  color: #cc1a32;
+  font-weight: 600;
+}
+
+.totalPrice {
+  color: #cc1a32;
+  font-weight: 600;
+}
+
+.quantityControls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.quantityInput {
+  outline: none;
+  max-width: 3rem;
+  border: 1px solid #ccc;
+  text-align: center;
+  align-items: center;
+}
+.deleteIcon{
+  cursor: pointer;
+}

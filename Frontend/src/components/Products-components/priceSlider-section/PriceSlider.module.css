@@ -1,0 +1,27 @@
+.priceInput input{
+  width: 8rem;
+  border: 0.5px solid #ccc;
+  outline: none;
+  padding:0.5rem ;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.mainDiv{
+  font-family: 'Poppins';
+  padding-right: 1rem;
+  border-bottom: 1px solid #ccc;
+padding-bottom: 3rem;
+}
+.mainDiv p{
+  font-size: 1.1rem;
+  word-spacing: 0.3rem;
+}
+.mainDiv label{
+  font-family: 'Poppins';
+  font-size: 1rem;
+  margin-top: 1rem;
+  color: #979797;
+}

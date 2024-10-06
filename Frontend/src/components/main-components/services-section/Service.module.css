@@ -1,0 +1,51 @@
+.servicesContainer {
+  padding:5rem 0 !important;
+  border-top:1px solid #e8e8e8 ;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+  background-color: #f9f9f9;
+  font-family: 'Poppins';
+}
+
+.serviceItem {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  max-width: 300px;
+  transition: transform 0.3s ease;
+}
+
+.serviceItem:hover {
+  transform: scale(1.1);
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+  padding: 15px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+  font-size: 2.5rem;
+  color: #cc1a32;
+}
+
+.textContent {
+  margin-left: 15px;
+}
+
+.textContent h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 5px 0;
+}
+
+p {
+  font-size: 14px;
+  color: #6c757d;
+  margin: 0;
+}

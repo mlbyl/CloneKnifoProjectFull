@@ -1,0 +1,62 @@
+.NavLogo img {
+  width: 8rem;
+}
+
+.Navbar {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900  ;
+  color: #111111;
+}
+
+.NavLink {
+  color: #000; /* İstediğiniz renk ile değiştirin */
+}
+.iconFonts{
+  font-size: 0.75rem;
+}
+.SearchWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.SearchIcon {
+  position: absolute;
+  right: 10px; /* Sağda hizalamak için */
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa; /* İstediğiniz rengi belirleyebilirsiniz */
+}
+.SearchIcon:hover{
+  cursor: pointer;
+}
+input.form-control {
+  padding-right: 40px; /* İkona yer açmak için sağ tarafa padding ekleyin */
+}
+
+.NavLink:hover {
+  color: #007bff; /* Hover rengi */
+}
+
+/* Dropdown için hover efekti */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu {
+  display: none; /* Varsayılan olarak gizli */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+}
+
+.dropdown-item {
+  padding: 0.5rem 1rem;
+  color: #212529;
+  text-decoration: none;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+  display: block;
+}

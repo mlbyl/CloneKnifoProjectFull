@@ -1,0 +1,36 @@
+.image {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+.spanInfo {
+  font-family: "Poppins";
+  color: #808080;
+  font-size: 1.2rem;
+}
+.spanInfo a {
+  font-family: "Poppins";
+  color: #cc1a32;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+
+.imageInfoH2 {
+  font-family: "Poppins";
+  color: #333333;
+  font-size: 6rem;
+  font-weight: 900;
+
+  letter-spacing: 1.5px;
+}
+.ShopNowButton {
+  color: #fff;
+  text-decoration: none;
+  background-color: #cc1a32;
+  padding: 15px 30px;
+  font-family: "Poppins";
+  font-weight: 600;
+  position: relative;
+  z-index: 2;
+}

@@ -1,0 +1,79 @@
+.productCard {
+  border: none;
+  display: flex;
+  align-items: center;
+}
+
+.productCard img {
+  height: 420px;
+  object-fit: cover;
+}
+.mixerTitle{
+  font-size: 2.5rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  color: #333333;
+  text-align: center;
+  max-width: 40%;
+}
+
+.cardOverlay {
+  position: absolute;
+  top: 0;
+  left: 25%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} 
+
+.cardOverlay h5, .cardOverlay p {
+  margin: 10px 0;
+}
+
+.shopButton {
+  background-color: #cc1a32;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  text-decoration: none;
+  border: none;
+  border-radius: 0; 
+}
+
+.shopButton:hover {
+  background-color: #333333;
+}
+
+.cardText {
+  padding: 20px 0 0 0;
+  color: #ff5656;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+.cardTitle {
+  font-size: 2.5rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+.card-body {
+  padding: 10px;
+  text-align: left;
+}
+
+/* Border-radius ve hover efekti kaldırıldı */
+.card {
+  border-radius: 0;
+  transition: none;
+}
+
+.card:hover {
+  transform: none;
+}

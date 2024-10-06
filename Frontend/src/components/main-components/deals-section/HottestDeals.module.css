@@ -1,0 +1,63 @@
+
+
+/* Liste yapısı */
+.dealList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Kart stilleri */
+.dealItem {
+  position: relative;
+  width: 22%;
+  padding: 20px;
+  border: 1px dashed #ddd;
+  transition: background-color 0.3s, transform 0.3s;
+  text-align: center;
+}
+
+/* Başlık ve metin stilleri */
+.dealItem h5 {
+  font-weight: bold;
+}
+
+.dealItem p {
+  color: #6c757d;
+  margin-bottom: 0;
+}
+
+/* Hover efekti: Arka plan kırmızı olacak, yazılar görünmez olacak */
+.dealItem:hover {
+  background-color: #cc1a32;
+  transform: scale(1.05);
+}
+
+.dealItem:hover h5, 
+.dealItem:hover p {
+  color: transparent; /* Yazılar görünmez olacak */
+}
+
+/* Shop Now linki gizli olacak */
+.shopLink {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Yatay ve dikey merkezleme */
+  color: white;
+  font-weight: bold;
+  /* padding: 10px 20px; */
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+.icon {
+  font-size: 1.2em;
+  vertical-align: middle; /* İkonu metinle hizalayalım */
+}
+
+/* Hover edildiğinde Shop Now linki görünecek */
+.dealItem:hover .shopLink {
+  display: flex;
+}

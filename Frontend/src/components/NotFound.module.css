@@ -1,0 +1,23 @@
+.link{
+  padding:1.5rem 3rem;
+  background-color: #cc1a32;
+  border-radius: 0.2rem;
+  color:#fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-family: 'Poppins';
+  gap: 1rem;
+}
+
+.paragraph{
+  font-family: 'Poppins';
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.header{
+  font-family: 'Poppins';
+  font-weight: 600;
+}

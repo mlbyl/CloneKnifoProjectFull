@@ -1,0 +1,30 @@
+
+
+.Image {
+  width: 100%; 
+  max-width: 19.6rem; 
+  height: auto; 
+}
+
+.Head {
+  font-size: 2.5rem;
+  font-family: "Poppins";
+  font-weight: 600;
+}
+
+.imagePrice {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #cc1a32;
+  font-family: 'Poppins';
+}
+
+.imageName {
+  font-family: 'Poppins';
+  text-decoration: none;
+  color: black;
+}
+
+.imageName:hover {
+  color: #cc1a32;
+}

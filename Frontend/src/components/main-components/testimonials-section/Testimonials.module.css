@@ -1,0 +1,67 @@
+.testimonials {
+  padding: 20px;
+  text-align: center;
+  font-family: 'Poppins';
+}
+
+.heading {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.testimonialList {
+  display: flex;
+  justify-content: space-between;
+}
+
+.testimonial {
+  background: #f9f9f9;
+  padding: 3.5rem;
+  border-radius: 8px;
+  width: 30%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.topSection {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.title {
+  font-size: 1rem;
+  color: #666;
+}
+
+.text {
+  font-size: 1rem;
+  font-family: 'Poppins';
+  margin-bottom: 15px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+}
+
+.ratingNumber {
+  margin-left: 8px;
+  font-weight: bold;
+  color: #333;
+}
