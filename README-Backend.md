@@ -194,8 +194,4 @@ Sure! Below is the "Known Issues and Future Enhancements" section formatted for 
 - [PostgreSQL](https://www.postgresql.org/)
 - [Multer](https://github.com/expressjs/multer)
 
-## License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
----
 
