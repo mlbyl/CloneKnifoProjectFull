@@ -34,9 +34,10 @@ This repository contains the backend of a full-stack eCommerce application, buil
 - Node.js v14+ and npm
 - PostgreSQL database
 - AWS account with an S3 bucket for image storage
+
 ## For Recommendation
 - Before start to projet I highly recommend to watch this Amazon Aws Cloud Configuration video
-- https://youtu.be/DNbsunwSOPM?si=7gkoKqMTe-vxTbZA
+-[ https://youtu.be/DNbsunwSOPM?si=7gkoKqMTe-vxTbZA](https://www.youtube.com/watch?v=DNbsunwSOPM)
 
 ### Installation
 
