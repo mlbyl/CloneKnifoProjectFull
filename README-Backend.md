@@ -154,6 +154,38 @@ The server will run on `http://localhost:3000` by default.
 ├── .env                     # Environment configuration file
 └── package.json             # Dependencies and scripts
 ```
+Sure! Below is the "Known Issues and Future Enhancements" section formatted for inclusion in your README. You can place this at the end of your README file.
+
+
+## Known Issues and Future Enhancements
+
+### Known Issues
+1. **Testing**: No automated tests are currently set up for this project. Adding unit and integration tests for controllers and services would improve stability and reliability.
+2. **Logging**: There is minimal logging for the application. Implementing a logging system (e.g., with Winston or Morgan) could help monitor and debug issues in production.
+
+### Future Enhancements
+1. **Complete Documentation**: 
+   - Expand on API endpoint documentation, ideally with an API documentation tool like Swagger or Postman. This would help developers understand how to interact with the backend services more easily.
+   - Add JSDoc comments to the codebase for better inline documentation of methods and data structures.
+
+2. **Role-Based Access Control (RBAC)**:
+   - Currently, all authenticated users can access certain routes.The database currently supports role-based access control, but is not written as service code.
+
+4. **Pagination and Filtering**:
+   - For endpoints that retrieve lists of data (e.g., products, users), implementing pagination and filtering options will improve performance and usability.
+
+5. **Email Notifications**:
+   - For user-related actions like registration and order confirmations, setting up email notifications using a service like SendGrid or Amazon SES could enhance the user experience.
+
+6. **Caching**:
+   - Adding caching for frequently accessed data, like product lists, using Redis or another caching layer would improve response times and reduce database load.
+
+7. **Environment-Specific Configurations**:
+   - Configurations for different environments (development, testing, production) are not fully documented or separated. Using a library like `config` or handling this through environment variables could enhance deployment flexibility.
+
+9. **File Upload Validation**:
+   - While file uploads are managed with Multer and AWS S3, adding stricter file validation (e.g., file size limits and allowed file types) could improve security and prevent unnecessary storage costs.
+
 
 ## Acknowledgments
 - [Node.js](https://nodejs.org/)
