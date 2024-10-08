@@ -92,6 +92,51 @@ This repository contains the frontend of a full-stack eCommerce application buil
 - **AuthContext**: Manages user authentication state (JWT tokens, login, logout).
 - **ShoppingProviderContext**: Manages the shopping cart state and interactions.
 
+Based on your provided project details and the current state of your full-stack e-commerce application, here are some additional points for your README file under the "Known Issues & Future Improvements" section. These include both what you've mentioned and additional potential improvements that I can observe from your structure.
+
+## Known Issues & Future Improvements
+
+### General
+- **Deployment**: The project is not yet deployed. Set up deployment on platforms like Vercel for the frontend and possibly Heroku for the backend.
+- **Code Refactoring**: 
+   - The **Login** and **Register** components need to be refactored for better code structure and improved user experience.
+   - Ensure **consistent component naming** conventions for better readability and maintainability.
+   - **Handle Axios Messages**: Implement proper handling of all Axios operations for success and error messages across the application.
+- **Performance Optimization**: Optimize image loading, lazy load components, and add proper caching strategies.
+
+### UI & UX Improvements
+- **Shopping Cart**: 
+   - Display an appropriate "No products found" component when no items are in the shopping cart.
+   - Ensure the cart button on the header shows the **correct number of ordered items and quantities** dynamically.
+   - Refactor the product input value logic on the cart page to ensure correct data display after changes.
+- **Wishlist Feature**: Implement wishlist functionality, including adding items to the wishlist and displaying a counter in the header for the number of wishlist items.
+- **Search Feature**: 
+   - Main menu search functionality is missing and needs improvement.
+   - Improve search results with pagination or filtering by categories.
+- **Animations**:
+   - Add a "product added to cart" and "added to wishlist" animation to give feedback to users after actions.
+   - Implement a "product deleted successfully" animation for all CRUD operations (Create, Read, Update, Delete).
+- **Product Buttons**: Each product should have three distinct buttons: "Add to Cart," "Quick View," and "Add to Wishlist." Ensure these buttons work correctly and are visually clear.
+- **Review System**: Add a product review feature where users can post, edit, and delete reviews for products. Display user reviews on product detail pages.
+
+### Layout & Styling
+- **Header Links**: Ensure that all header links point to the correct routes and work as expected.
+- **Footer Links**: Fix or implement footer links to make them functional, leading to the appropriate sections or external pages.
+- **Responsive Design**: Review the app's responsiveness on various screen sizes. Improve the mobile experience, especially for the header, footer, and main navigation.
+- **Component Consistency**: Ensure consistency in design and styling across the entire app, particularly for buttons, cards, and navigation elements.
+
+### Features to Add
+- **Pagination**: Add pagination for product listing pages to handle large datasets efficiently.
+- **Sort & Filter**: Implement sorting and filtering features on the product listing page to allow users to sort by price, popularity, rating, etc.
+- **Product Details**: Enhance the product details page by adding additional product specifications and related products.
+- **Order Management**: Allow users to view and manage their past orders, including order status and details of each ordered item.
+
+### Error Handling & Validation
+- **Error Messages**: Ensure all error messages (e.g., for failed login attempts or invalid input) are user-friendly and display correctly.
+  
+### Backend Communication
+- **API Integration**: Refactor how Axios handles backend API calls to ensure proper error and success message handling and ensure state consistency after CRUD operations.
+
 ## Acknowledgments
 - [React.js](https://reactjs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
