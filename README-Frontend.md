@@ -64,7 +64,6 @@ This repository contains the frontend of a full-stack eCommerce application buil
 │   ├── contexts/             # Context API providers for product, auth, and shopping cart
 │   ├── styles/               # Tailwind CSS configurations and custom styles
 │   ├── App.js                # Main entry point for routing
-│   ├── index.js              # Application bootstrap
 └── package.json              # Project metadata and dependencies
 ```
 
