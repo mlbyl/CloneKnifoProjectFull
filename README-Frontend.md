@@ -62,7 +62,7 @@ This repository contains the frontend of a full-stack eCommerce application buil
 │   ├── layouts/              # Layout components (e.g., header, footer)
 │   ├── pages/                # Page components (e.g., home, product details)
 │   ├── contexts/             # Context API providers for product, auth, and shopping cart
-│   ├── styles/               # Tailwind CSS configurations and custom styles
+│   ├── styles/               # CSS configurations and custom styles
 │   ├── App.js                # Main entry point for routing
 └── package.json              # Project metadata and dependencies
 ```
@@ -138,7 +138,6 @@ Based on your provided project details and the current state of your full-stack 
 
 ## Acknowledgments
 - [React.js](https://reactjs.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
 - [React Router](https://reactrouter.com/)
 - [Axios](https://axios-http.com/)
 
