@@ -35,8 +35,8 @@ This repository contains the backend of a full-stack eCommerce application, buil
 - PostgreSQL database
 - AWS account with an S3 bucket for image storage
 ## For Recommendation
-- Before to start to projet I highly recommend to watch this Amazon Aws Cloud Configuration video
-- [https://youtu.be/DNbsunwSOPM?si=AqflO1X7jaCTKvMV](https://youtu.be/DNbsunwSOPM)
+- Before start to projet I highly recommend to watch this Amazon Aws Cloud Configuration video
+- https://youtu.be/DNbsunwSOPM?si=7gkoKqMTe-vxTbZA
 
 ### Installation
 
