@@ -6,6 +6,8 @@ import styles from "./Register.module.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../AuthContext";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 const Register = () => {
@@ -64,12 +66,13 @@ const Register = () => {
         );
        
         setMessage("Data added successfully");
+        toast.success("Register successfully")
         if (response.data && response.data.data && response.data.data.token) {
           login( response.data.data.token);
         }
         navigate("/userprofile");
       } catch (error) {
-        console.log("Error while adding user", error);
+        toast.error("Error while adding user", error);
       }
     },
   });
@@ -142,7 +145,6 @@ const Register = () => {
           </span>
         </div>
       </div>
-      {message && <div>{message}</div>}
     </form>
   );
 };

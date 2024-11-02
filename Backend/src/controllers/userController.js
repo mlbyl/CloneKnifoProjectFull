@@ -23,7 +23,8 @@ const getUserWithOrderItems = async (req, res) => {
   if (!errors.isEmpty()) {
     return res.status(400).send(new ErrorResponse(errors.array()))
   }
-  const { id } = req.params
+  console.log("user from request ", req.user)
+  const { id } = req.user
   try {
     const userWithOrderItems = await userServices.getUserWithOrderItems(id)
     return res.status(200).send(new SuccessResponse('User founded succesfully', userWithOrderItems))
@@ -63,7 +64,7 @@ const updateUser = async (req, res) => {
   if (!errors.isEmpty()) {
     return res.status(400).send(new ErrorResponse(errors.array()))
   }
-  const { id } = req.params
+  const id = req.user.id
   const { firstname, lastname, password, email, role } = req.body
   try {
     const updatedUser = await userServices.updateUser(id, firstname, lastname, email, password, role)
@@ -142,7 +143,7 @@ const getUserById = async (req, res) => {
   if (!errors.isEmpty()) {
     return res.status(400).send(new ErrorResponse(errors.array()))
   }
-  const { id } = req.params
+  const id = req.user.id
   try {
     const user = await userServices.getUserById(id)
     if (!user) {

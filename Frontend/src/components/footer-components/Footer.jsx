@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect,useState } from "react";
 import styles from "./Footer.module.css";
 import { Link } from "react-router-dom";
 import {
@@ -10,9 +10,39 @@ import {
 } from "react-icons/fa";
 import { SlEnvolopeLetter } from "react-icons/sl";
 import KnifoIcon from "../../assets/Project-images/Knifo-logo.png";
+import { toast } from "react-toastify";
+import axios from "axios";
+
 
 
 const Footer = () => {
+  const token =localStorage.getItem("token")
+
+const [userData, setUserData] = useState({
+  firstname: "",
+  lastname: "",
+  email: "",
+  password: "",
+});
+
+useEffect(() => {
+  const fetchUserData = async () => {
+    try {
+      const response = await axios.get(
+        `http://localhost:2345/user/userbyid/`,{
+          headers:{
+            Authorization:`Bearer ${token}`
+          }
+        }        );
+      setUserData(response.data.data);
+    } catch (error) {
+     toast.warning("For the best experience, please log in");
+    }
+  };
+
+  fetchUserData();
+}, [token]);
+
   return (
     <footer className={styles.footer}>
       <div className={styles.footerSection}>
@@ -57,7 +87,7 @@ const Footer = () => {
         <h3 className={styles.footerTitle}>Join newsletter</h3>
         <p className={styles.footerText}>Subscribe to the weekly newsletter.</p>
         <div className={styles.newsletter}>
-          <input type="email" placeholder="Enter your email.." />
+         <input type="email" value={userData.email} placeholder="Enter your email.." />
           <button>
             <SlEnvolopeLetter size={30}/>
           </button>
@@ -66,14 +96,14 @@ const Footer = () => {
 
       <div className={styles.footerBottom}>
         <div className={styles.footerLinks}>
-          <Link to="/about-us">About us</Link>
+          <Link to="/">About us</Link>
           <Link to="/contact-us">Contact us</Link>
           <Link to="/faqs">Faq's</Link>
-          <Link to="/news">News</Link>
-          <Link to="/privacy-policy">Privacy policy</Link>
-          <Link to="/return-policy">Return policy</Link>
+          <Link to="/">News</Link>
+          <Link to="/">Privacy policy</Link>
+          <Link to="/">Return policy</Link>
         </div>
-        <p className={styles.footerCopyright}>Copyright © 2024 by qodex™</p>
+        <p className={styles.footerCopyright}>Copyright © 2024 by mlbyl™</p>
       </div>
     </footer>
   );

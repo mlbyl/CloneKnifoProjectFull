@@ -1,9 +1,6 @@
 const { body, param } = require('express-validator')
 
 const userUpdateValidator = [
-  param('id')
-    .isInt({ min: 1 }).withMessage('Id must be a positive number '),
-
   body('firstname')
     .optional()
     .notEmpty().withMessage('Firstname is required.')

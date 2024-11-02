@@ -6,6 +6,7 @@ import styles from "./Login.module.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../AuthContext";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -49,13 +50,14 @@ const Login = () => {
           }
         );
         setMessage("Login successful!");
+        toast.success("Login successfull!")
         navigate("/userprofile");
         if (response.data && response.data.data && response.data.data.token) {
           login(response.data.data.token);
         }
       } catch (error) {
         setMessage("Error during login: " + error.response.data.message);
-        console.log(error);
+       toast.error(error.response.data.message);
       }
     },
   });
@@ -102,7 +104,7 @@ const Login = () => {
           </span>
         </div>
       </div>
-      {message && <div>{message}</div>}
+      
     </form>
   );
 };

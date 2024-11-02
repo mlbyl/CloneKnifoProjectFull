@@ -11,16 +11,16 @@ const authMiddleware = require('../../middlewares/authMiddleware')
 const userUpdateValidator = require('../../middlewares/User-validations/userUpdateValidation')
 
 
-router.get('/userwithorderitems/:id',userIdValidation,userControllers.getUserWithOrderItems)
+router.get('/userwithorderitems/',authMiddleware,userControllers.getUserWithOrderItems)
 
 router.get('/', userControllers.getAllUsers)
 router.get('/userbyfirstname/:firstname', userFirstNameValidator, userControllers.getUserByFirstName)
 router.get('/userbylastname/:lastname', userLastnameValidation, userControllers.getUserByLastName)
 router.get('/userbyemail/:email', userEmailValidation, userControllers.getUserByEmail)
-router.get('/userbyid/:id', userIdValidation, userControllers.getUserById)
+router.get('/userbyid/', authMiddleware, userControllers.getUserById)
 router.post('/register', userRegisterValidator, userControllers.registerUser)
 router.post('/login', userLoginValidator, userControllers.loginUser)
-router.put('/update/:id', userUpdateValidator, userControllers.updateUser)
+router.put('/update/',authMiddleware, userUpdateValidator, userControllers.updateUser)
 router.delete('/delete/:id', userIdValidation, userControllers.deleteUser)
 
 

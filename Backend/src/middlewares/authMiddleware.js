@@ -5,7 +5,7 @@ const authMiddleware = (req, res, next) => {
   const authenticationHeader = req.headers.authorization
   const token = authenticationHeader && authenticationHeader.split(' ')[1]
   if (!token) {
-    return res.status(401).send(new ErrorResponse('Tokne not provided'))
+    return res.status(401).send(new ErrorResponse('Token not provided'))
   }
   jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
     if (err) {

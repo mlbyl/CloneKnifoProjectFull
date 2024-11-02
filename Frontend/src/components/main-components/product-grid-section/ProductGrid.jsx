@@ -12,7 +12,7 @@ const ProductGrid = () => {
   return (
     <div className="container my-5 p-0 w-w-100">
       <div className="row">
-        {/* Üst büyük kart */}
+        
         <div className="col-md-8 position-relative">
           <div className={`card ${styles.productCard}`}>
             <img src={mixerImg} className="card-img-top" alt="Mixer" />
@@ -25,7 +25,7 @@ const ProductGrid = () => {
             </div>
           </div>
         </div>
-        {/* Sağ üst küçük kart */}
+       
         <div className="col-md-4 ">
           <Link
             to="/products"
@@ -41,7 +41,7 @@ const ProductGrid = () => {
       </div>
 
       <div className="row mt-4">
-        {/* Alt sol kart */}
+     
         <div className="col-md-4 ">
           <Link
             to="/products"
@@ -58,7 +58,7 @@ const ProductGrid = () => {
             </div>
           </Link>
         </div>
-        {/* Alt orta kart */}
+        
         <div className="col-md-4 ">
           <Link
             to="/products"
@@ -71,7 +71,7 @@ const ProductGrid = () => {
             </div>
           </Link>
         </div>
-        {/* Alt sağ kart */}
+       
         <div className="col-md-4 position-relative">
           <Link
             to="/products"

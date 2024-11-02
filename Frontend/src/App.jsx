@@ -14,6 +14,7 @@ import PrivateRoutes from "./components/PublicAndPrivateComponents/Private/Priva
 import User from "./components/login-register-components/user-section/User";
 import ShoppingCart from "./pages/ShoppingCart";
 import { ShoppingProvider } from "./ShoppingProviderContext";
+import ContactUs from "./pages/Contactus";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
               <Route path="/login" element={<PublicRoutes><Login /></PublicRoutes>} />
               <Route path="/userprofile" element={<PrivateRoutes><User /></PrivateRoutes>} />
               <Route path="/shoppingcart" element={<ShoppingCart/>}></Route>
+              <Route path="/contact-us" element={<ContactUs/>}></Route>
             </Routes>
             <Footer />
           </BrowserRouter>

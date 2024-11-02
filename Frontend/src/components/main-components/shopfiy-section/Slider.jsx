@@ -11,7 +11,6 @@ import { Link } from "react-router-dom";
 const Slider = () => {
   return (
     <Carousel>
-      {/* Carousel Item 1 */}
       <Carousel.Item>
         <div className="d-flex align-items-center h-50 position-relative mb-5">
           <img className={`${styles.image}`} src={slider} alt="First slide" />
@@ -35,7 +34,6 @@ const Slider = () => {
         </div>
       </Carousel.Item>
 
-      {/* Carousel Item 2 */}
       <Carousel.Item>
         <div className="d-flex align-items-center h-50 position-relative">
           <img className={`${styles.image}`} src={slider1} alt="First slide" />
@@ -59,7 +57,6 @@ const Slider = () => {
         </div>
       </Carousel.Item>
 
-      {/* Carousel Item 3 */}
       <Carousel.Item>
         <div className="d-flex align-items-center h-50 position-relative">
           <img className={`${styles.image}`} src={slider3} alt="First slide" />

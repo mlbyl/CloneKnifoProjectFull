@@ -7,16 +7,15 @@ import { Link } from "react-router-dom";
 import { IoLogOutOutline } from "react-icons/io5";
 import { AuthContext } from "../../../AuthContext";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const User = () => {
   const navigate = useNavigate();
 
   const { auth, logout } = useContext(AuthContext);
 
-  let id = null;
-  if (auth && auth.user && auth.user.id) {
-    id = auth.user.id;
-  }
+  const token = localStorage.getItem("token")
+
   const handleLogout = () => {
     logout();
     navigate("/userprofile");
@@ -35,11 +34,14 @@ const User = () => {
     const fetchUserData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:2345/user/userbyid/${id}`
-        );
+          `http://localhost:2345/user/userbyid/`,{
+            headers:{
+              Authorization:`Bearer ${token}`
+            }
+          }        );
         setUserData(response.data.data);
       } catch (error) {
-        console.log("Error fetching user data", error);
+        toast.error("Error fetching user data", error);
       }
     };
 
@@ -86,20 +88,21 @@ const User = () => {
 
       try {
         const response = await axios.put(
-          `http://localhost:2345/user/update/${id}`,
+          `http://localhost:2345/user/update/`,
           user,
           {
             headers: {
               "Content-Type": "application/json",
+              Authorization:`Bearer ${token}`
             },
           }
         );
-        console.log(response);
         setMessage("User updated successfully");
+        toast.success("User updated successfully")
         setIsEditing(false);
         setUserData(response.data);
       } catch (error) {
-        console.log("Error while updating user", error);
+        toast.error("Error while updating user", error);
       }
     },
   });
@@ -173,7 +176,7 @@ const User = () => {
           {isEditing ? (
             <div className="d-flex flex-column gap-2">
               <button type="submit">Update</button>
-              <button type="button" onClick={() => setIsEditing(false)}>
+              <button type="button" className="text-bg-danger" onClick={() => setIsEditing(false)}>
                 Cancel
               </button>
             </div>

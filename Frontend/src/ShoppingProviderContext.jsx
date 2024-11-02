@@ -1,6 +1,7 @@
 import axios from "axios";
 import { createContext, useContext, useEffect, useState } from "react";
 import { AuthContext } from "./AuthContext";
+import { toast } from "react-toastify";
 
 const ShoppingContext = createContext();
 
@@ -39,16 +40,14 @@ const ShoppingProvider = ({ children }) => {
         productId: productId,
       };
 
-      console.log(orderItems);
-
       axios
         .post("http://localhost:2345/orderitem/create", orderItems, {
           headers: {
             "Content-Type": "application/json",
           },
         })
-        .then((response) => console.log(response))
-        .catch((error) => console.log("Error", error));
+        .then((response) => toast.success(response.data.message))
+        .catch((error) => toast.error("Error", error));
     }
   }, [userId, quantity, price, productId]);
 

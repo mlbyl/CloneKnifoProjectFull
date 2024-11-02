@@ -1,11 +1,14 @@
 import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import NotFound from "../../NotFound";
 import styles from "./ProductDetails.module.css";
 import { ShoppingContext } from "../../../ShoppingProviderContext";
+import { toast } from "react-toastify";
 
 const ProductDetail = () => {
+  const navigate = useNavigate();
+
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -20,15 +23,20 @@ const ProductDetail = () => {
     addedMainImage: null,
     addedInputValue: null,
   });
-  useEffect(()=>{
+  useEffect(() => {
     setinfosOfAddedProduct({
       addedProduct: product,
       addedMainImage: mainImage,
       addedInputValue: inputValue,
     });
-  },[product,inputValue,mainImage])
+  }, [product, inputValue, mainImage]);
 
   const handleAddToCartButton = () => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      navigate("/login");
+      toast.error("Please login...");
+    }
     handleOrderItems(infosOfAddedProduct);
   };
 
@@ -61,7 +69,7 @@ const ProductDetail = () => {
         const allImg = productData.Images?.map((img) => img);
         setAllImages(allImg);
       } catch (error) {
-        console.log("Fetch Error:", error);
+        toast.error("An error occured while fetching product:", error);
       } finally {
         setLoading(false);
       }

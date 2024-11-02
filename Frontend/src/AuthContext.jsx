@@ -1,5 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import { jwtDecode } from "jwt-decode";
+import { toast } from "react-toastify";
 
 const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
@@ -16,7 +17,7 @@ const AuthProvider = ({ children }) => {
         const decoded = jwtDecode(token);
         const currentTime = Date.now() / 1000;
         if (decoded.exp < currentTime) {
-          console.log("token has been expired");
+          toast.error("token has been expired");
           logout();
         } else {
           setAuth({
@@ -38,7 +39,7 @@ const AuthProvider = ({ children }) => {
 
         const currentTime = Date.now() / 1000;
         if (decoded.exp < currentTime) {
-          console.log("token has been expired");
+         toast.error("token has been expired");
           logout();
         } else {
           localStorage.setItem("token",token)
