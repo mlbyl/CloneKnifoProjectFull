@@ -8,7 +8,7 @@ const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:2345/product/productswithimages")
+      .get(`${import.meta.env.VITE_BACKEND_URL}/product/productswithimages`)
       .then((response) => {
         setProducts(response.data.data);
       })

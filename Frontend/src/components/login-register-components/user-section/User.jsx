@@ -34,7 +34,7 @@ const User = () => {
     const fetchUserData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:2345/user/userbyid/`,{
+          `${import.meta.env.VITE_BACKEND_URL}/user/userbyid/`,{
             headers:{
               Authorization:`Bearer ${token}`
             }

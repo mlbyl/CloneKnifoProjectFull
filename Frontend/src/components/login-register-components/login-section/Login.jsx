@@ -41,7 +41,7 @@ const Login = () => {
 
       try {
         const response = await axios.post(
-          "http://localhost:2345/user/login",
+          `${import.meta.env.VITE_BACKEND_URL}/user/login`,
           user,
           {
             headers: {

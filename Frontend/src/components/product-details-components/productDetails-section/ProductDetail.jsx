@@ -57,7 +57,7 @@ const ProductDetail = () => {
     const fetchProduct = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:2345/product/productbyid/${id}`
+          `${import.meta.env.VITE_BACKEND_URL}/product/productbyid/${id}`
         );
         const productData = response.data.data;
         setProduct(productData);

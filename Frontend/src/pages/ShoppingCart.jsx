@@ -9,7 +9,7 @@ const ShoppingCart = () => {
   const token = localStorage.getItem("token");
   useEffect(() => {
     axios
-      .get(`http://localhost:2345/user/userwithorderitems/`, {
+      .get(`${import.meta.env.VITE_BACKEND_URL}/user/userwithorderitems/`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

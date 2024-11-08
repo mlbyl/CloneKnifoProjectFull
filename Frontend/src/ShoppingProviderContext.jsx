@@ -41,7 +41,7 @@ const ShoppingProvider = ({ children }) => {
       };
 
       axios
-        .post("http://localhost:2345/orderitem/create", orderItems, {
+        .post(`${import.meta.env.VITE_BACKEND_URL}/orderitem/create`, orderItems, {
           headers: {
             "Content-Type": "application/json",
           },

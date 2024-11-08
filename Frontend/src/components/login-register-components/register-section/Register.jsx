@@ -56,7 +56,7 @@ const Register = () => {
 
       try {
         const response = await axios.post(
-          "http://localhost:2345/user/register",
+          `${import.meta.env.VITE_BACKEND_URL}/user/register`,
           user,
           {
             headers: {
@@ -64,7 +64,6 @@ const Register = () => {
             },
           }
         );
-       
         setMessage("Data added successfully");
         toast.success("Register successfully")
         if (response.data && response.data.data && response.data.data.token) {
