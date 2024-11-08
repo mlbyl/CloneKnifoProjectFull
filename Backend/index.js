@@ -26,6 +26,6 @@ app.use('/image', imageRoutes)
 app.use('/review', reviewRoutes)
 app.use('/orderitem', orderItemRoutes)
 
-// app.listen(PORT, () => {
-//   console.log(`Server listening on Port : ${PORT}`)
-// })
+app.listen( () => {
+  console.log(`Server listening `)
+})
