@@ -14,6 +14,7 @@
     "@aws-sdk/client-s3": "^3.654.0",
     "@aws-sdk/s3-request-presigner": "^3.654.0",
     "@vercel/node": "^3.2.24",
+    "@vercel/postgres": "^0.10.0",
     "aws-sdk": "^2.1691.0",
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
