@@ -11,7 +11,7 @@ const ShoppingMain = ({ products }) => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/orderitem/delete/${id}`);
+      await axios.delete(`http://localhost:2345/orderitem/delete/${id}`);
       setOrderItems((prevItems) => prevItems.filter((item) => item.id !== id));
       toast.success("Order item succesfully deleted");
     } catch (error) {
