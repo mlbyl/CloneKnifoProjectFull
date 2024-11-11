@@ -3,7 +3,6 @@ import { useState, useEffect, useContext } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import styles from "./User.module.css";
-import { Link } from "react-router-dom";
 import { IoLogOutOutline } from "react-icons/io5";
 import { AuthContext } from "../../../AuthContext";
 import { useNavigate } from "react-router-dom";
@@ -11,10 +10,8 @@ import { toast } from "react-toastify";
 
 const User = () => {
   const navigate = useNavigate();
-
-  const { auth, logout } = useContext(AuthContext);
-
-  const token = localStorage.getItem("token")
+  const { logout } = useContext(AuthContext);
+  const token = localStorage.getItem("token");
 
   const handleLogout = () => {
     logout();
@@ -34,19 +31,22 @@ const User = () => {
     const fetchUserData = async () => {
       try {
         const response = await axios.get(
-          `${import.meta.env.VITE_BACKEND_URL}/user/userbyid/`,{
-            headers:{
-              Authorization:`Bearer ${token}`
-            }
-          }        );
+          `${import.meta.env.VITE_BACKEND_URL}/user/userbyid/`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
         setUserData(response.data.data);
+        console.log("Fetched user data:", response.data.data);
       } catch (error) {
         toast.error("Error fetching user data", error);
       }
     };
 
     fetchUserData();
-  }, [userData]);
+  }, []);
 
   const formik = useFormik({
     initialValues: {
@@ -79,6 +79,11 @@ const User = () => {
         .required("Email is required"),
     }),
     onSubmit: async (values) => {
+      if (!isEditing) {
+        console.log("Form submission prevented. Not in editing mode.");
+        return;
+      }
+
       const user = {
         firstname: values.firstname,
         lastname: values.lastname,
@@ -87,19 +92,20 @@ const User = () => {
       };
 
       try {
+        console.log("Sending update request to backend...");
         const response = await axios.put(
-          `http://localhost:2345/user/update/`,
+          `${import.meta.env.VITE_BACKEND_URL}/user/update/`,
           user,
           {
             headers: {
               "Content-Type": "application/json",
-              Authorization:`Bearer ${token}`
+              Authorization: `Bearer ${token}`,
             },
           }
         );
         setMessage("User updated successfully");
-        toast.success("User updated successfully")
-        setIsEditing(false);
+        toast.success("User updated successfully");
+        setIsEditing(false); // Reset editing mode after successful update
         setUserData(response.data);
       } catch (error) {
         toast.error("Error while updating user", error);
@@ -107,10 +113,26 @@ const User = () => {
     },
   });
 
+  const handleEditClick = (e) => {
+    e.preventDefault(); // Prevents default form submission behavior
+    setIsEditing(true);
+    setMessage("");
+    console.log("Edit button clicked. Editing mode enabled.");
+  };
+
+  const handleUpdateClick = (e) => {
+    e.preventDefault(); // Prevents default form submission behavior
+    if (isEditing) {
+      console.log("Update button clicked. Form will be submitted.");
+      formik.handleSubmit();
+    } else {
+      console.log("Update prevented. Edit mode not active.");
+    }
+  };
+
   return (
     <form
       className={`d-flex flex-column justify-content-center align-items-center gap-2 ${styles.form}`}
-      onSubmit={formik.handleSubmit}
     >
       <h2>Welcome {userData.firstname}!</h2>
       <div
@@ -175,7 +197,7 @@ const User = () => {
         <div className="d-flex flex-column pt-5">
           {isEditing ? (
             <div className="d-flex flex-column gap-2">
-              <button type="submit">Update</button>
+              <button onClick={handleUpdateClick}>Update</button>
               <button type="button" className="text-bg-danger" onClick={() => setIsEditing(false)}>
                 Cancel
               </button>
@@ -185,7 +207,7 @@ const User = () => {
               <button
                 className="fw-semibold"
                 type="button"
-                onClick={() => setIsEditing(true)}
+                onClick={handleEditClick}
               >
                 Edit Profile
               </button>
