@@ -17,7 +17,7 @@ const AuthProvider = ({ children }) => {
         const decoded = jwtDecode(token);
         const currentTime = Date.now() / 1000;
         if (decoded.exp < currentTime) {
-          toast.error("token has been expired");
+          toast.error("Your session time has been expired,please back to login");
           logout();
         } else {
           setAuth({
@@ -39,7 +39,7 @@ const AuthProvider = ({ children }) => {
 
         const currentTime = Date.now() / 1000;
         if (decoded.exp < currentTime) {
-         toast.error("token has been expired");
+         toast.error("Your session time has been expired,please back to login");
           logout();
         } else {
           localStorage.setItem("token",token)
