@@ -36,7 +36,7 @@ This repository contains the frontend of a full-stack eCommerce application buil
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/ecommerce-frontend.git
+   git clone https://github.com/mlbyl/ecommerce-frontend.git
    cd ecommerce-frontend
    ```
 

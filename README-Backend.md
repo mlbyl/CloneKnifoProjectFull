@@ -43,7 +43,7 @@ This repository contains the backend of a full-stack eCommerce application, buil
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/ecommerce-backend.git
+   git clone https://github.com/mlbyl/ecommerce-backend.git
    cd ecommerce-backend
    ```
 
