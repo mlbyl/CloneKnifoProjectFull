@@ -36,8 +36,8 @@ This repository contains the frontend of a full-stack eCommerce application buil
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/mlbyl/ecommerce-frontend.git
-   cd ecommerce-frontend
+   https://github.com/mlbyl/CloneKnifoProjectFull.git
+   cd Frontend
    ```
 
 2. **Install dependencies**:
