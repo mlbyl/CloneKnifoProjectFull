@@ -43,8 +43,8 @@ This repository contains the backend of a full-stack eCommerce application, buil
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/mlbyl/ecommerce-backend.git
-   cd ecommerce-backend
+   https://github.com/mlbyl/CloneKnifoProjectFull.git
+   cd Backend
    ```
 
 2. **Install dependencies**:
